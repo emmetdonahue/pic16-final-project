@@ -1,7 +1,5 @@
 import numpy as np
 import pandas as pd
-
-#from sklearn.neighbors import NearestNeighbors
 from sklearn import neighbors 
 from sklearn.model_selection import train_test_split
 
@@ -16,10 +14,7 @@ targets = targets.astype(int)
 
 df = df.drop(['Rank', 'Player', 'Position', 'Team', 'Season'], axis=1)
 
-#labels = list(df.columns) # header labels
-
 features = np.array(df) # player stats
-
 training_features, test_features, training_targets, test_targets = train_test_split(features, targets, test_size = .4)
 
 nbrs = neighbors.KNeighborsClassifier(1)
